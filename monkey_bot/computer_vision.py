@@ -40,7 +40,6 @@ while True:
 
             # Print x-axis position
             print("X-axis:", int(x))
-            print("test2")
 
     cv2.imwrite("frame.jpg", frame)
     cv2.imwrite("mask.jpg", mask)
