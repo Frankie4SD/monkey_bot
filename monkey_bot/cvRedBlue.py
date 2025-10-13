@@ -64,8 +64,9 @@ while True:
         # Calculate and print difference
         diff = midpoint_x - center_line_x
         print(f"Midpoint X: {midpoint_x}, Center Line X: {center_line_x}, Difference: {diff}")
-
-    cv2.imshow("Color Detection", frame)
+    
+    if False:
+        cv2.imshow("Color Detection", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
