@@ -42,8 +42,7 @@ while True:
             print("X-axis:", int(x))
 
     cv2.imwrite("frame.jpg", frame)
-    cv2.imshow("Mask", mask)
-
+    cv2.imwrite("mask.jpg", mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
