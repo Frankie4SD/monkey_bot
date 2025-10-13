@@ -29,16 +29,16 @@ try:
         print(f"\n--- Loop {i+1}/4 ---")
 
         # Move forward 0.5s
-        send_continuous(255, 255, duration=0.5)
+        send_continuous(255, 255, duration=0.5, freq=115200)
 
         # Stop 1s
-        send_continuous(0, 0, duration=1)
+        send_continuous(0, 0, duration=1, freq=115200)
 
         # Turn left 0.5s
-        send_continuous(255, -255, duration=0.5)
+        send_continuous(255, -255, duration=0.5, freq=115200)
 
         # Stop 1s
-        send_continuous(0, 0, duration=1)
+        send_continuous(0, 0, duration=1, freq=115200)
 
     print("\n✅ Done moving in square pattern.")
 
