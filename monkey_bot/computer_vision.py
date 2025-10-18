@@ -5,7 +5,7 @@ import time
 
 # Open webcam
 print("test1")
-arduino = serial.Serial('/dev/ttyACM0', 9600)
+arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
