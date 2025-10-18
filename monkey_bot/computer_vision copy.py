@@ -3,6 +3,8 @@ import numpy as np
 
 # Open webcam
 print("test1")
+arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+send_to_arduino(0, 0, delay=1)
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
