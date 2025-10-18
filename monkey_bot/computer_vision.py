@@ -3,6 +3,7 @@ import numpy as np
 
 # Open webcam
 print("test1")
+arduino = serial.Serial('/dev/ttyACM0', 9600)
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
@@ -41,7 +42,9 @@ while True:
 
             # Print x-axis position
             print("X-axis:", int(x))
-            m1_val, m2_val = 5, 5
+            m1_val = 5
+            m2_val = 5
+        
             
 
     #cv2.imwrite("frame.jpg", frame)
