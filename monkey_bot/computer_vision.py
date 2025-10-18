@@ -43,9 +43,8 @@ while True:
             cv2.circle(frame, center, 5, (0, 255, 0), -1)
 
             # Print x-axis position
-            print("X-axis:", int(x), "Y axis:", int(y))
-            m1_val = 5
-            m2_val = 5
+            print("X-axis:", int(x), ", Y axis:", int(y))
+            
         
             
 
