@@ -22,6 +22,8 @@ while True:
     mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
     mask = mask1 + mask2
 
+    m1_val = 0
+    m2_val = 0
     # Find contours
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -40,6 +42,8 @@ while True:
 
             # Print x-axis position
             print("X-axis:", int(x))
+            m1_val, m2_val = 5, 5
+            send_to_arduino(m1_val, m2_val)
 
     #cv2.imwrite("frame.jpg", frame)
     #cv2.imwrite("mask.jpg", mask)
