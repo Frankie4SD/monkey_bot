@@ -40,10 +40,9 @@ while True:
             cv2.circle(frame, center, radius, (0, 255, 0), 2)
             cv2.circle(frame, center, 5, (0, 255, 0), -1)
             cmd = f"{m1_val},{m2_val}\n"
-            if cmd != prev_cmd:
-                arduino.write(cmd.encode())
-                prev_cmd = cmd
-                print(f"Motor1={m1_val}, Motor2={m2_val}")
+            arduino.write(cmd.encode())
+            prev_cmd = cmd
+            print(f"Motor1={m1_val}, Motor2={m2_val}")
 
             # Print x-axis position
             print("X-axis:", int(x))
