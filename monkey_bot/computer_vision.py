@@ -44,7 +44,7 @@ while True:
 
             # Print x-axis position
             print("X-axis:", int(x), ", Y axis:", int(y))
-            
+            print(radius)
         
             
 
