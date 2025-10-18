@@ -22,8 +22,8 @@ while True:
     mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
     mask = mask1 + mask2
 
-    #m1_val = 0
-    #m2_val = 0
+    m1_val = 0
+    m2_val = 0
     # Find contours
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -39,11 +39,16 @@ while True:
             # Draw green circle + center
             cv2.circle(frame, center, radius, (0, 255, 0), 2)
             cv2.circle(frame, center, 5, (0, 255, 0), -1)
+            cmd = f"{m1_val},{m2_val}\n"
+            if cmd != prev_cmd:
+                arduino.write(cmd.encode())
+                prev_cmd = cmd
+                print(f"Motor1={m1_val}, Motor2={m2_val}")
 
             # Print x-axis position
             print("X-axis:", int(x))
             m1_val, m2_val = 5, 5
-            #send_to_arduino(m1_val, m2_val)
+            send_to_arduino(m1_val, m2_val)
 
     #cv2.imwrite("frame.jpg", frame)
     #cv2.imwrite("mask.jpg", mask)
