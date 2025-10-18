@@ -43,8 +43,11 @@ while True:
             cv2.circle(frame, center, 5, (0, 255, 0), -1)
 
             # Print x-axis position
-            print("X-axis:", int(x), ", Y axis:", int(y))
-            print(radius)
+            #print("X-axis:", int(x), ", Y axis:", int(y))
+            #print(radius)
+
+            print(f"Center: ({int(x)}, {int(y)}), Radius: {int(radius)}")
+
         
             
 
