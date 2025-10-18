@@ -44,6 +44,7 @@ while True:
 
             # Print x-axis position
             print("X-axis:", int(x))
+            print("Y axis:", int(y))
             m1_val = 5
             m2_val = 5
         
