@@ -41,8 +41,8 @@ while True:
             # Print x-axis position
             print("X-axis:", int(x))
 
-    cv2.imwrite("frame.jpg", frame)
-    cv2.imwrite("mask.jpg", mask)
+    #cv2.imwrite("frame.jpg", frame)
+    #cv2.imwrite("mask.jpg", mask)
     #if cv2.waitKey(1) & 0xFF == ord('q'):
        # break
     #if frame_count > 100:  
