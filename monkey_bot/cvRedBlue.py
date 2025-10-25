@@ -1,8 +1,13 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(0)
+# required for motor movement
+import serial
+import time
+from move_regular import Movement
 
+cap = cv2.VideoCapture(0)
+monkey_bot = Movement()
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -62,7 +67,7 @@ while True:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
         # Calculate and print difference
-        diff = midpoint_x - center_line_x
+        diff = (midpoint_x - center_line_x)/midpoint_x
         print(f"Midpoint X: {midpoint_x}, Center Line X: {center_line_x}, Difference: {diff}")
     
     if True:
