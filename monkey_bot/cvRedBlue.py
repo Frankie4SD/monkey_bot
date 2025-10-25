@@ -17,6 +17,7 @@ while True:
     center_line_x = width // 2
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    hsv = cv2.rotate(hsv, cv2.ROTATE_180)
 
     # Red HSV ranges
     lower_red1 = np.array([0, 120, 70])
@@ -26,7 +27,7 @@ while True:
 
     # Blue HSV range
     lower_blue = np.array([100, 150, 0])
-    upper_blue = np.array([140, 255, 255])
+    upper_blue = np.array([140, 194 , 188])
 
     # Masks
     mask_red = cv2.bitwise_or(
@@ -67,10 +68,25 @@ while True:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
         # Calculate and print difference
-        diff = (midpoint_x - center_line_x)/midpoint_x
+        diff = (midpoint_x - center_line_x)/width
         print(f"Midpoint X: {midpoint_x}, Center Line X: {center_line_x}, Difference: {diff}")
     
-    if True:
+        diff = (midpoint_x - center_line_x)/width
+        if midpoint_x < width/5:
+            monkey_bot.yaw(0.25,False)
+        elif midpoint_x > width * 4/5:
+            monkey_bot.yaw(-0.25,False)
+        else: 
+            monkey_bot.surge(0.25,False)
+    else: 
+        if red_x:
+            monkey_bot.yaw(0.15,False)
+        else: 
+            if blue_x:
+                monkey_bot.yaw(-0.15,False)
+
+
+    if False:
         cv2.imshow("Color Detection", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

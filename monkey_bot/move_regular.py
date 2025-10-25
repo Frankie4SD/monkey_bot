@@ -17,8 +17,10 @@ class Movement():
         cmd = f"{m1},{m2}\n"
         self.arduino.write(cmd.encode())
         #print(f"Sent: {cmd.strip()}")
-        if delay > 0:
-            time.sleep(delay)
+        if delay != False:
+            if delay > 0:
+                time.sleep(delay)
+        
 
     def surge(self,mag,time):
         # mag = mangitude
@@ -40,6 +42,7 @@ class Movement():
         arduino.close()
         print("Serial closed.")
 
+"""
 p1 = Movement()
 p1.surge(1,3)
 p1.stop(1)
@@ -49,7 +52,6 @@ p1.yaw(-1,3)
 p1.close()
 
 
-"""
 # yaw left
 send_to_arduino(255, 255, delay=3)
 
