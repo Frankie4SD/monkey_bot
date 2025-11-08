@@ -1,7 +1,7 @@
 import depthai as dai
 import cv2
 import numpy as np
-from utils.arguments import initialize_argparser
+from utils.arguments import initialize_argparser # type: ignore
 
 def detect_colors_hsv(frame):
     """
