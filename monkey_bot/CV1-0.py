@@ -16,7 +16,7 @@ def detect_colors_hsv(frame):
     
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # HSV ranges for red
+    # HSV ranges for red color
     red_lower1 = np.array([0, 120, 70])
     red_upper1 = np.array([10, 255, 255])
     red_lower2 = np.array([170, 120, 70])
