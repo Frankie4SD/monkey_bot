@@ -26,13 +26,13 @@ class Movement():
     def surge(self,mag,time):
         # mag = mangitude
         print("surge")
-        self.send_to_arduino(-255*mag, 255*mag, delay=time)
+        self.send_to_arduino(255*mag, 255*mag, delay=time)
 
     def yaw(self,mag,time):
         # mag = mangitude
         # positive is yawing right
         print("yaw")
-        self.send_to_arduino(-255*mag,-255*mag, delay=time)
+        self.send_to_arduino(255*mag,-255*mag, delay=time)
 
     def stop(self,time):
         # mag = mangitude
