@@ -3,7 +3,7 @@ import serial
 import time
 
 # Open gamepad
-device_path = '/dev/input/by-id/usb-Logitech_Gamepad_F310_B92AFE6C-event-joystick'
+device_path = '/dev/input/by-id/usb-Logitech_Gamepad_F310_CE0ABA70-event-joystick'
 gamepad = InputDevice(device_path)
 
 # Open Arduino serial
